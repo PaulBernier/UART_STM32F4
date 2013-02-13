@@ -6,20 +6,15 @@
 #include "Uart.hpp"
 
 int main(void) {
-
-	Delay_Init();
 	
 	Uart<1> serial;
 	serial.init(9600);
 
-	uint32_t test=0;
-	
 	while (1) {
 	
 		//Get data
 		if(serial.available()){
 			serial.read(test);
-			Delay(100);
 		}
 		
 		//Print data
